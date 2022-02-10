@@ -2,292 +2,74 @@ import React, { Component } from 'react'
 import Newsitems from './Newsitems'
 
 export class News extends Component {
-    articles = 
-    [
-        {
-          "source": {
-            "id": null,
-            "name": "New York Times"
-          },
-          "author": "John Branch",
-          "title": "Olympics 2022: Live Medal Count, Snowboarding and Skiing Updates - The New York Times",
-          "description": "The medals ceremony for team figure skating is postponed on short notice amid a legal inquiry. Shaun White and Chloe Kim qualify for the halfpipe finals, but Mikaela Shiffrin skis off the course in the slalom.",
-          "url": "https://www.nytimes.com/live/2022/02/08/sports/olympics-medals-winter",
-          "urlToImage": "https://static01.nyt.com/images/2022/02/09/world/09olympics-briefing-header-10/09olympics-briefing-header-10-facebookJumbo.jpg",
-          "publishedAt": "2022-02-09T10:36:23Z",
-          "content": "Mikaela Shiffrin was disqualified from her second consecutive race at the Beijing Olympics.Credit...Robert F. Bukaty/Associated Press\r\nWhen Mikaela Shiffrin, a two-time Olympic champion and ski racin… [+5356 chars]"
-        },
-        {
-          "source": {
-            "id": "techradar",
-            "name": "TechRadar"
-          },
-          "author": "James Rogerson",
-          "title": "Samsung Galaxy S22 live stream: how to watch the Samsung Unpacked launch - TechRadar",
-          "description": "Samsung's big launch is happening soon",
-          "url": "https://www.techradar.com/how-to/samsung-unpacked-live-stream",
-          "urlToImage": "https://cdn.mos.cms.futurecdn.net/4rBhyZwLFtJ9HP3PUPTTDU-1200-80.jpg",
-          "publishedAt": "2022-02-09T09:04:56Z",
-          "content": "There’s big news coming from Samsung, as the company is set to announce the Samsung Galaxy S22 range (including the Samsung Galaxy S22 Plus and Samsung Galaxy S22 Ultra) later today (February 9), and… [+1247 chars]"
-        },
-        {
-          "source": {
-            "id": "reuters",
-            "name": "Reuters"
-          },
-          "author": null,
-          "title": "Senate's McConnell pushes back against Republican Party censure of Trump critics - Reuters",
-          "description": "Top U.S. Senate Republican Mitch McConnell on Tuesday criticized his party's censure of two prominent Republican critics of Donald Trump, joining an intra-party battle that could upend his efforts to project an image of party moderation in this year's midterm…",
-          "url": "https://www.reuters.com/world/us/republican-infighting-rattles-mcconnells-us-midterm-elections-strategy-2022-02-08/",
-          "urlToImage": "https://www.reuters.com/resizer/6t7d8chMK6WVpO3h2PYb9zUUfSc=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/UBXUKRVGHZMFRIOZNIZSWXXOKE.jpg",
-          "publishedAt": "2022-02-09T07:47:00Z",
-          "content": "WASHINGTON, Feb 8 (Reuters) - Top U.S. Senate Republican Mitch McConnell on Tuesday criticized his party's censure of two prominent Republican critics of Donald Trump, joining an intra-party battle t… [+4508 chars]"
-        },
-        {
-          "source": {
-            "id": "independent",
-            "name": "Independent"
-          },
-          "author": "Oliver O'Connell",
-          "title": "Canada truckers - live: Nearly two dozen arrested as busiest US border crossing remains at standstill - The Independent",
-          "description": "Canada trucker convoy news live",
-          "url": "https://www.independent.co.uk/news/world/americas/canada-truckers-freedom-convoy-protest-latest-b2010854.html",
-          "urlToImage": "https://static.independent.co.uk/2022/02/08/18/urnpublicidap.orgdfbd69113f644f738a6ae79d277fafa7.jpg?quality=75&width=1200&auto=webp",
-          "publishedAt": "2022-02-09T07:45:30Z",
-          "content": "This isnt something the Biden administration can ignore\r\nCNN reporter Paula Newton, speaking from Ottawa on the ongoing protest in Canadas capital and the standstill on the busiest crossing between t… [+1019 chars]"
-        },
-        {
-          "source": {
-            "id": null,
-            "name": "ESPN"
-          },
-          "author": "Andrew Lopez",
-          "title": "Josh Hart, Nickeil Alexander-Walker sat courtside during New Orleans Pelicans' win over Houston Rockets after being traded - ESPN",
-          "description": "The Pelicans traded Josh Hart and Nickeil Alexander-Walker to the Portland Trail Blazers earlier in the day. They decided to attend the game to see their former teammates one more time before heading to the Pacific Northwest.",
-          "url": "https://www.espn.com/nba/story/_/id/33249327/josh-hart-nickeil-alexander-walker-sat-courtside-new-orleans-pelicans-win-houston-rockets-being-traded",
-          "urlToImage": "https://a1.espncdn.com/combiner/i?img=%2Fphoto%2F2022%2F0209%2Fr972013_1296x729_16%2D9.jpg",
-          "publishedAt": "2022-02-09T06:29:08Z",
-          "content": "NEW ORLEANS -- There were two familiar, recently traded faces sitting courtside Tuesday night for the New Orleans Pelicans' matchup against the Houston Rockets.\r\nGuards Josh Hart and Nickeil Alexande… [+3673 chars]"
-        },
-        {
-          "source": {
-            "id": null,
-            "name": "New York Times"
-          },
-          "author": "Bill Pennington, Matthew Futterman",
-          "title": "Mikaela Shiffrin Disqualified From Second Olympics Race - The New York Times",
-          "description": "",
-          "url": "https://www.nytimes.com/2022/02/08/sports/olympics/mikaela-shiffrin-out-dnf.html",
-          "urlToImage": "https://static01.nyt.com/images/2022/02/09/multimedia/08olympics-briefing-setup-2sub2/09olympics-briefing-header-10PMa-facebookJumbo.jpg",
-          "publishedAt": "2022-02-09T05:15:00Z",
-          "content": "I was trying to look back and think back on the last days, she said, and think what I have been trying to do and what I have been doing with my skiing that would suggest that on the fifth gate I woul… [+1611 chars]"
-        },
-        {
-          "source": {
-            "id": null,
-            "name": "Space.com"
-          },
-          "author": "Tariq Malik",
-          "title": "SpaceX says a geomagnetic storm just doomed 40 Starlink internet satellites - Space.com",
-          "description": "The satellites launched on Feb. 3, only to be hit by the storm a day later.",
-          "url": "https://www.space.com/spacex-starlink-satellites-lost-geomagnetic-storm",
-          "urlToImage": "https://cdn.mos.cms.futurecdn.net/Kfg2vYY5VC7FVnqbyiqEj3-1200-80.jpg",
-          "publishedAt": "2022-02-09T04:49:40Z",
-          "content": "SpaceX is in the process of losing up to 40 brand-new Starlink internet satellites due to a geomagnetic storm that struck just a day after the fleet's launch last week. \r\nA SpaceX Falcon 9 rocket lau… [+4322 chars]"
-        },
-        {
-          "source": {
-            "id": null,
-            "name": "The Indianapolis Star"
-          },
-          "author": "James Boyd, The Indianapolis Star",
-          "title": "'I called Domas first': Pacers trade Sabonis, Justin Holiday, Jeremy Lamb to Kings - IndyStar",
-          "description": "This is Indiana's second trade this week, signifying that owner Herb Simon is ready to commit to a full rebuild.",
-          "url": "https://www.indystar.com/story/sports/nba/pacers/2022/02/08/pacers-trade-domantas-sabonis-justin-holiday-jeremy-lamb-kings/6706738001/",
-          "urlToImage": "https://www.gannett-cdn.com/presto/2021/12/28/PIND/02ef52c0-1be7-4d17-a844-dec79fbe3cb1-DSC-2915.jpg?auto=webp&crop=1619,911,x0,y85&format=pjpg&width=1200",
-          "publishedAt": "2022-02-09T04:48:59Z",
-          "content": "ATLANTA — Star center Domantas Sabonis, swingman Justin Holiday and reserve guard Jeremy Lamb made the trip to Atlanta for the Pacers' road game Tuesday against the Hawks, but they did not suit up fo… [+4274 chars]"
-        },
-        {
-          "source": {
-            "id": null,
-            "name": "PhillyVoice.com"
-          },
-          "author": null,
-          "title": "Where do Sixers' James Harden talks stand with one day left until the NBA trade deadline? - PhillyVoice.com",
-          "description": "The Sixers are the team with everything to gain at this year’s trade deadline, one big piece away from potentially making the leap to contention. With time ticking down, though, the Sixers and Nets remain relatively static in their positions, each convinced t…",
-          "url": "https://www.phillyvoice.com/nba-trade-deadline-rumors-james-harden-sixers-ben-simmons-daryl-morey-seth-curry-point-guard-latest-news/",
-          "urlToImage": "https://media.phillyvoice.com/media/images/USATSI_17004258.a31055c7.fill-1200x630-c0.jpg",
-          "publishedAt": "2022-02-09T04:41:38Z",
-          "content": "The Sixers are the team with everything to gain at this years trade deadline, one big piece away from potentially making the leap to contention. With time ticking down, though, the Sixers and Nets re… [+6030 chars]"
-        },
-        {
-          "source": {
-            "id": null,
-            "name": "NBC Chicago"
-          },
-          "author": "NBC Chicago",
-          "title": "Sources: Pritzker to Announce Phased Removal of Illinois' Indoor Mask Mandate - NBC Chicago",
-          "description": "As coronavirus case rates and hospitalizations continue to plummet, Illinois Gov. J.B. Pritzker is expected to unveil a plan Wednesday to drop the state’s…",
-          "url": "https://www.nbcchicago.com/news/coronavirus/sources-pritzker-to-announce-phased-removal-of-states-indoor-mask-mandate/2753341/",
-          "urlToImage": "https://media.nbcchicago.com/2021/12/tlmd-mascarillas-omicron-1.jpg?quality=85&strip=all&resize=1200%2C675",
-          "publishedAt": "2022-02-09T04:32:37Z",
-          "content": "As coronavirus case rates and hospitalizations continue to plummet, Illinois Gov. J.B. Pritzker is expected to unveil a plan Wednesday to drop the states indoor mask mandate, sources tell NBC 5s Mary… [+1403 chars]"
-        },
-        {
-          "source": {
-            "id": null,
-            "name": "YourTango"
-          },
-          "author": "Ruby Miranda",
-          "title": "3 Zodiac Signs Who Will Have A Rough Day On February 9, 2022 - YourTango",
-          "description": "Three zodiac signs who will have a rough day on February 9, 2022 and for Scorpio, Aquarius, and Pisces, the tragedy could be blamed it on the Moon in Gemini.",
-          "url": "https://www.yourtango.com/2022348203/zodiac-signs-rough-day-february-9-2022",
-          "urlToImage": "https://www.yourtango.com/sites/default/files/styles/listing_big/public/image_blog/zodiac-signs-rough-day-february-9-2022.jpg?itok=auBHGTS6",
-          "publishedAt": "2022-02-09T04:03:16Z",
-          "content": "Three zodiac signs will have it tougher than others on February 9, 2022, because we are working with Moon square Jupiter as our main influential planet. \r\nWhat makes Wednesday intense for Scorpio, Aq… [+3624 chars]"
-        },
-        {
-          "source": {
-            "id": null,
-            "name": "Eonline.com"
-          },
-          "author": "Gabrielle Chung",
-          "title": "Why Scott Disick's Latest Message to Khloe Kardashian Is Raising Eyebrows - E! NEWS",
-          "description": "A new photo of Khloe Kardashian wearing a skin-tight bodysuit has fans flipping out, including Scott Disick. Read on to find out what he said to the Good American mogul.",
-          "url": "https://www.eonline.com/news/1319116/why-scott-disicks-latest-message-to-khloe-kardashian-is-raising-eyebrows",
-          "urlToImage": "https://akns-images.eonline.com/eol_images/Entire_Site/2021517/rs_1200x1200-210617114646-1200-scott-disick-khloe-kardashian-kuwtk.jpg?fit=around%7C1080:1080&output-quality=90&crop=1080:1080;center,top",
-          "publishedAt": "2022-02-09T03:57:00Z",
-          "content": "The Lord approveth.\r\nOn Tuesday, Feb. 8, Khloe Kardashian showed her family some love when she shared a photo of herself in strapless onesie from the SKIMS apparel line. The image, which the Keeping … [+958 chars]"
-        },
-        {
-          "source": {
-            "id": null,
-            "name": "KOMO News"
-          },
-          "author": "Keith Eldridge, KOMO News reporter",
-          "title": "Leading local infectious diseases expert sees hope in recent COVID case trends - KOMO News",
-          "description": "A local infectious diseases expert said Tuesday that new and emerging trends seem to indicate that the end of the COVID pandemic could come as soon as mid-March if the trajectory of current indicators remain the same. \"We need to be realistic,&rdquo; said Dr.…",
-          "url": "https://komonews.com/news/coronavirus/leading-local-infectious-expert-sees-hope-in-recent-covid-case-trends",
-          "urlToImage": "https://komonews.com/resources/media/c963e4ea-819e-478b-81a2-08c82d6633e8-large16x9_thumb_119528.png?1644377897602",
-          "publishedAt": "2022-02-09T03:49:03Z",
-          "content": null
-        },
-        {
-          "source": {
-            "id": "business-insider",
-            "name": "Business Insider"
-          },
-          "author": "Erin Snodgrass",
-          "title": "Joe Biden slams Florida 'Don't Say Gay' bill following DeSantis support - Business Insider",
-          "description": "GOP lawmakers in Florida on Tuesday advanced legislation that would ban the discussion of sexual orientation and gender identity in schools.",
-          "url": "https://www.businessinsider.com/joe-biden-slams-florida-dont-say-gay-bill-desantis-support-2022-2",
-          "urlToImage": "https://i.insider.com/61da590b276e8200193846b8?width=1200&format=jpeg",
-          "publishedAt": "2022-02-09T03:20:17Z",
-          "content": "President Joe Biden on Tuesday offered support to LGBTQ students while speaking out against a Florida bill that would ban the discussion of sexual orientation and gender identity in the state's publi… [+2932 chars]"
-        },
-        {
-          "source": {
-            "id": null,
-            "name": "SciTechDaily"
-          },
-          "author": null,
-          "title": "Massive Sponge Gardens Discovered on the Peaks of Extinct Underwater Volcanoes in the Arctic Deep Sea - SciTechDaily",
-          "description": "Sponges grow in large numbers and to impressive size on the peaks of extinct underwater volcanoes. Massive sponge gardens thrive on top of seamounts in the Central Arctic Ocean, one of the most oligotrophic seas on Earth. They appear to feed on the remnants o…",
-          "url": "https://scitechdaily.com/massive-sponge-gardens-discovered-on-the-peaks-of-extinct-underwater-volcanoes-in-the-arctic-deep-sea/",
-          "urlToImage": "https://scitechdaily.com/images/Arctic-Seafloor-Sponges-scaled.jpg",
-          "publishedAt": "2022-02-09T03:04:20Z",
-          "content": "The dense sponge grounds discovered on the northerly Langseth Ridge seamount structure represent an astonishingly rich ecosystem, demonstrating the ability of sponges and associated microorganisms to… [+7250 chars]"
-        },
-        {
-          "source": {
-            "id": null,
-            "name": "BBC News"
-          },
-          "author": "https://www.facebook.com/bbcnews",
-          "title": "UCLA in $250m payout for gynaecologist's sex abuse - BBC News",
-          "description": "A campus gynaecologist at UCLA allegedly abused hundreds of patients over his 35-year career.",
-          "url": "https://www.bbc.com/news/world-us-canada-60313101",
-          "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/1631D/production/_123190909_gettyimages-1227921682.jpg",
-          "publishedAt": "2022-02-09T02:49:28Z",
-          "content": "Image source, Getty Images\r\nImage caption, Gynaecologist James Heaps also faces criminals sexual abuse charges\r\nThe University of California has agreed to pay nearly $250m (£185m) to over 200 women w… [+2858 chars]"
-        },
-        {
-          "source": {
-            "id": "the-wall-street-journal",
-            "name": "The Wall Street Journal"
-          },
-          "author": "Dustin Volz, Ian Talley",
-          "title": "Justice Department Says It Seized $3.6 Billion Worth of Bitcoin Stolen in 2016 Hack - The Wall Street Journal",
-          "description": "The value of the bitcoin at the time it was seized last week marks the department’s largest-ever financial seizure",
-          "url": "https://www.wsj.com/articles/justice-department-says-it-seized-3-6-billion-in-stolen-cryptocurrency-exchange-hack-11644339381",
-          "urlToImage": "https://images.wsj.net/im-482050/social",
-          "publishedAt": "2022-02-09T02:21:00Z",
-          "content": null
-        },
-        {
-          "source": {
-            "id": "fox-news",
-            "name": "Fox News"
-          },
-          "author": "Associated Press",
-          "title": "Praise for Eileen Gu breaks Chinese social media - Fox News",
-          "description": "Two American-born athletes competing for China. Two radically different reactions from Chinese social media to their performances at the Winter Olympics.",
-          "url": "https://www.foxnews.com/sports/praise-for-eileen-gu-breaks-chinese-social-media",
-          "urlToImage": "https://static.foxnews.com/foxnews.com/content/uploads/2022/02/AP22039455717463.jpg",
-          "publishedAt": "2022-02-09T01:56:21Z",
-          "content": "Two American-born athletes competing for China. Two radically different reactions from Chinese social media to their performances at the Winter Olympics.\r\nAs freestyle skier Eileen Gu won her gold me… [+3332 chars]"
-        },
-        {
-          "source": {
-            "id": "the-verge",
-            "name": "The Verge"
-          },
-          "author": "Emma Roth, Richard Lawler",
-          "title": "Peloton’s lead hardware engineer is leaving the company too - The Verge",
-          "description": "Peloton’s CEO and president stepped down Tuesday as the company announced plans to lay off 2,800 employees. Now the vice presidents of hardware and commercial operations are leaving too.",
-          "url": "https://www.theverge.com/2022/2/8/22924180/peloton-hardware-commercial-operations-executives-vice-presidents-leave-company",
-          "urlToImage": "https://cdn.vox-cdn.com/thumbor/LEjpeczPK_j3DpRuHmxvc78JIpY=/0x277:2040x1345/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/16033600/akrales_190328_3240_0139.jpg",
-          "publishedAt": "2022-02-09T01:32:47Z",
-          "content": "Sam Bowen was in charge of engineering Pelotons bikes, treadmill, and a new heart rate monitor.\r\nPhoto by Amelia Holowaty Krales / The Verge\r\nPelotons vice president of hardware engineering, Sam Bowe… [+1480 chars]"
-        },
-        {
-          "source": {
-            "id": null,
-            "name": "Bitcoin.com"
-          },
-          "author": null,
-          "title": "Bitcoin Giveaway: Crypto Exchange FTX Giving Away BTC During Super Bowl – Featured Bitcoin News - Bitcoin News",
-          "description": "Crypto exchange FTX is giving away bitcoin during the Super Bowl this weekend and each winner may receive between eight and 10 bitcoins.",
-          "url": "https://news.bitcoin.com/bitcoin-giveaway-crypto-exchange-ftx-giving-away-btc-during-super-bowl/",
-          "urlToImage": "https://static.news.bitcoin.com/wp-content/uploads/2022/02/super-bowl.jpg",
-          "publishedAt": "2022-02-09T01:01:31Z",
-          "content": "Crypto exchange FTX is giving away bitcoin during the Super Bowl this weekend. The company estimates that each winner could receive between eight and 10 bitcoins. The actual prize amount depends on t… [+3001 chars]"
-        }
-      ]
-    constructor(){
+    articles = []
+
+    async componentDidMount() {
+        let url = 'https://newsapi.org/v2/top-headlines?country=in&apiKey=7627c9b831b549a189503486a1a96f64&page=1pageSize=20';
+        let data = await fetch(url);
+        let parsedata = await data.json();
+        this.setState({ articles: parsedata.articles, totalResults: parsedata.totalResults })
+
+
+
+    }
+    constructor() {
         super();
         this.state = {
-            articles : this.articles,
-            loading : false
+            articles: this.articles,
+            loading: false,
+            page:1
         }
     }
-    
+    handlePreviousClick = async ()=>{
+        let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=7627c9b831b549a189503486a1a96f64&page=${this.state.page-1}&pageSize=20`;
+        let data = await fetch(url);
+        let parsedata = await data.json();
+
+        this.setState({
+            page : this.state.page-1,
+            articles: parsedata.articles 
+
+        })
+    }
+    handleNextClick = async ()=>{
+        if(this.state.page + 1 >Math.ceil(this.state.totalResults/20)){
+
+        }
+        else{
+            let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=7627c9b831b549a189503486a1a96f64&page=${this.state.page+1}&pageSize=20`;
+            let data = await fetch(url);
+            let parsedata = await data.json();
+
+            this.setState({
+                page : this.state.page + 1,
+                articles: parsedata.articles 
+            })
+        }
+
+
+    }
+
     render() {
+        console.log("render");
         return (
             <div className='container my-3'>
                 <h1>News Monkey - Top Headlines</h1>
                 <div className="row">
-                {this.state.articles.map((element)=>{   
-                    return (<div className="col-md-4 my-2">
-                    <Newsitems title={element.title.slice(0,45)} description={element.description.slice(0,88)}  imageurl = {element.urlToImage}  url ={element.url} />
-                </div>)
-                })}
-                    
+                    {this.state.articles.map((element) => {
+                        return (<div className="col-md-4 my-2">
+                            <Newsitems title={element.title ? element.title.slice(0, 45) : ""} description={element.description ? element.description.slice(0, 88) : ""} imageurl={element.urlToImage} url={element.url} />
+                        </div>)
+                    })}
+
                 </div>
 
-
+                <div className="container d-flex justify-content-between">
+                    <button disabled={this.state.page<=1} type="button"   className="btn btn-dark" onClick={this.handlePreviousClick}>&larr; Previous</button>
+                    <button type="button" className="btn btn-dark" onClick={this.handleNextClick}>Next &rarr;</button>
+                </div>
             </div>
+
         )
     }
 }
