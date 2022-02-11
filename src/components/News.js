@@ -19,10 +19,7 @@ export class News extends Component {
     articles = []
 
     async componentDidMount() {
-        let url =`https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}&apiKey=7627c9b831b549a189503486a1a96f64&page=1&pageSize=20`;
-        let data = await fetch(url);
-        let parsedata = await data.json();
-        this.setState({ articles: parsedata.articles, totalResults: parsedata.totalResults })
+       this.updateNews()
 
 
 
@@ -32,38 +29,38 @@ export class News extends Component {
         this.state = {
             articles: this.articles,
             loading: false,
-            page:1
+            page:1,
+            totalResults:0
         }
     }
-    handlePreviousClick = async ()=>{
-        let url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}&apiKey=7627c9b831b549a189503486a1a96f64&page=${this.state.page-1}&pageSize=20`;
+    async updateNews(pageNo){
+        const url =`https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}&apiKey=7627c9b831b549a189503486a1a96f64&page=${this.state.page}&pageSize=20`;
         let data = await fetch(url);
         let parsedata = await data.json();
+        this.setState({ articles: parsedata.articles, totalResults: parsedata.totalResults })
+    }
 
-        this.setState({
-            page : this.state.page-1,
-            articles: parsedata.articles 
 
-        })
+
+    handlePreviousClick = async ()=>{
+        this.setState({page:this.state.page+1})
+        this.updateNews()
     }
     handleNextClick = async ()=>{
-        if(this.state.page + 1 >Math.ceil(this.state.totalResults/20)){
-
-        }
-        else{
-            let url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}&apiKey=7627c9b831b549a189503486a1a96f64&page=${this.state.page+1}&pageSize=20`;
-            let data = await fetch(url);
-            let parsedata = await data.json();
-
-            this.setState({
-                page : this.state.page + 1,
-                articles: parsedata.articles 
-            })
-        }
+        this.setState({page:this.state.page+1})
+        this.updateNews()
 
 
     }
-
+    
+    fetchMoreData = async  () => {
+        this.setState({page:this.state.page +1})
+        const url =`https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}&apiKey=7627c9b831b549a189503486a1a96f64&page=${this.state.page}&pageSize=20`;
+        let data = await fetch(url);
+        let parsedata = await data.json();
+        this.setState({ articles: this.state.articles.concat(parsedata.articles), totalResults: parsedata.totalResults })
+      };
+    
     render() {
         console.log("render");
         return (
@@ -72,8 +69,7 @@ export class News extends Component {
                 <InfiniteScroll
                         dataLength={this.state.articles.length}
                         next={this.fetchMoreData}
-                        hasMore={this.state.articles.length!== this.totalResults}
-                        loader={<h4>Loading...</h4>}
+                        hasMore={this.state.articles.length!== this.state.totalResults}
                         >
                 <div className="row">
                     {this.state.articles.map((element) => {
@@ -86,10 +82,7 @@ export class News extends Component {
                 </div>
                 </InfiniteScroll>
 
-                <div className="container d-flex justify-content-between">
-                    <button disabled={this.state.page<=1} type="button"   className="btn btn-dark" onClick={this.handlePreviousClick}>&larr; Previous</button>
-                    <button type="button" className="btn btn-dark" onClick={this.handleNextClick}>Next &rarr;</button>
-                </div>
+
             </div>
 
         )
